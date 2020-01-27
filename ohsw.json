@@ -1,0 +1,18 @@
+{
+  "Name": "OHS",
+  "DisplayName": "Oracle HTTP Server",
+  "Description": "Run the OHS Component",
+  
+  "Dir": "E:\\Oracle\\Middleware\\user_projects\\FND1\\httpConfig\\ohs\\bin",
+  "Exec": "C:\\windows\\system32\\cmd.exe",
+  "StartArgs": ["/C","E:\\Oracle\\Middleware\\user_projects\\FND1\\httpConfig\\ohs\\bin\\startComponent.cmd","ohs1"],
+  "StopArgs": ["/C","E:\\Oracle\\Middleware\\user_projects\\FND1\\httpConfig\\ohs\\bin\\stopComponent.cmd","ohs1"],
+  "Env": [
+    "BUILD=DEBUG"
+  ],
+  "PidFile": "E:\\Oracle\\Middleware\\user_projects\\FND1\\httpConfig\\ohs\\servers\\ohs1\\logs\\httpd.pid",
+  "Dependency": "Oracle Weblogic ohs NodeManager (E_Oracle_Middleware_ohs_wlserver)",
+  
+  "Stderr": "E:\\Oracle\\Middleware\\user_projects\\FND1\\httpConfig\\ohs\\servers\\ohs1\\logs\\stderr.log",
+  "Stdout": "E:\\Oracle\\Middleware\\user_projects\\FND1\\httpConfig\\ohs\\servers\\ohs1\\logs\\stdout.log"
+}
