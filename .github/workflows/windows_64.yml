@@ -34,7 +34,10 @@ jobs:
         go get github.com/mitchellh/go-ps
       
     - name: build-for-windows
-      run: go build
+      run: |
+        go build
+        dir
+        dir ohsw.exe
       env:
         GOOS: windows
         GOARCH: amd64
