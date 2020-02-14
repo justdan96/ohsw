@@ -21,14 +21,14 @@ jobs:
     - run: mkdir bin
       name setup-bin-folder
       
-    - run: go build -o ./bin/ohsw.exe ohsw.go
+    - run: go build
       name: build-for-windows
       env:
         GOOS: windows
         GOARCH: amd64
       
-    - uses: actions/upload-artifact@master
-      with:
-         name: ohsw
-         path: bin
-      name: upload-artefact
+    #- uses: actions/upload-artifact@master
+    #  with:
+    #     name: ohsw
+    #     path: bin
+    #  name: upload-artefact
