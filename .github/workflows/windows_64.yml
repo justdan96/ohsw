@@ -30,9 +30,8 @@ jobs:
       
     - name: setup-deps
       run: |
-        echo $(go env GOPATH)
-        echo $(go env GOROOT)
-        go get -v -u ./...
+        go get github.com/kardianos/service
+        go get github.com/mitchellh/go-ps
       
     - name: build-for-windows
       run: go build
