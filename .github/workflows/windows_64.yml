@@ -21,7 +21,7 @@ jobs:
     - run: mkdir bin
       name setup-bin-folder
       
-    - run: go build -o bin\ohsw.exe ohsw.go
+    - run: go build -o ./bin/ohsw.exe ohsw.go
       name: build-for-windows
       env:
         GOOS: windows
