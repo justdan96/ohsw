@@ -14,7 +14,7 @@ jobs:
       name: checkout
       
     - name: setup-go
-      uses: actions/setup-go@v1
+      uses: actions/setup-go@v2-beta
       with:
         go-version: '^1.13'
         
