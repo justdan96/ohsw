@@ -46,17 +46,17 @@ jobs:
       
     - uses: actions/upload-artifact@master
       with:
-         name: ohsw
-         path: bin
+        name: ohsw
+        path: bin
       name: upload-artefact
       
     - name: zip-it
       run: Compress-Archive -Path bin -DestinationPath ohsw.zip
 
     - name: upload-release-asset
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: ohsw.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: ohsw.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
