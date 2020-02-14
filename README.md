@@ -44,7 +44,7 @@ go get github.com/mitchellh/go-ps
 go build
 ```
 
-This will produce `ohsw.exe`.
+This will produce `ohsw.exe` in the current folder.
 
 ## Credits
 
