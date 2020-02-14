@@ -53,10 +53,24 @@ jobs:
     - name: zip-it
       run: Compress-Archive -Path bin -DestinationPath ohsw.zip
 
-    - name: upload-release-asset
-      uses: softprops/action-gh-release@v1
+    - name: create-release
+      id: create-release
+      uses: actions/create-release@v1
       if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: ohsw.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create-release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ohsw.zip
+        asset_name: ohsw.zip
+        asset_content_type: application/zip
