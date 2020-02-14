@@ -10,21 +10,29 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@master
-      name: checkout
-      
+    
     - name: setup-go
       uses: actions/setup-go@v2-beta
       with:
         go-version: '^1.13'
+      
+    - name: setup env
+      run: |
+        echo "::set-env name=GOPATH::$(dirname $GITHUB_WORKSPACE)"
+        echo "::add-path::$(dirname $GITHUB_WORKSPACE)/bin"
+      shell: bash
+      
+    - uses: actions/checkout@master
+      name: checkout
         
     - name: setup-bin-folder
       run: mkdir bin
       
     - name: setup-deps
       run: |
-        go get -u -v github.com/mitchellh/go-ps
-        go get -u -v github.com/kardianos/service
+        echo $(go env GOPATH)
+        echo $(go env GOROOT)
+        go get -v -u ./...
       
     - name: build-for-windows
       run: go build
