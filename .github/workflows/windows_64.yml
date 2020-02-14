@@ -21,6 +21,11 @@ jobs:
     - name: setup-bin-folder
       run: mkdir bin
       
+    - name: setup-deps
+      run: |
+        go get -u -v github.com/mitchellh/go-ps
+        go get -u -v github.com/kardianos/service
+      
     - name: build-for-windows
       run: go build
       env:
