@@ -18,11 +18,11 @@ jobs:
       with:
         go-version: '^1.13'
         
-    - run: mkdir bin
-      name setup-bin-folder
+    - name setup-bin-folder
+      run: mkdir bin
       
-    - run: go build
-      name: build-for-windows
+    - name: build-for-windows
+      run: go build
       env:
         GOOS: windows
         GOARCH: amd64
