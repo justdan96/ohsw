@@ -32,6 +32,20 @@ The logging of OHSW is all done into the Windows Event Log. The stdout and stder
 
 Please note that the wrapper checks the status of OHS and runs scripts when Windows service actions are invoked. If OHSW crashes for any reason the Windows service will show as stopped but OHS will still be running. Use at your own risk!
 
+## Compilation
+
+Any recent version of Go should work. The project will only work on Windows. You should be able to `go get` it, otherwise for manual compilation:
+
+```
+git clone github.com/justdan96/ohsw
+cd ohsw
+go get github.com/kardianos/service
+go get github.com/mitchellh/go-ps
+go build
+```
+
+This will produce `ohsw.exe`.
+
 ## Credits
 
 Program written by Daniel Bryant.
