@@ -6,6 +6,10 @@
 
 This wrapper is for controlling programs that do not support being run as a Windows service natively. The initial implementation supports controlling OHS. Configuration is handled in a JSON file. It is written in Golang, so compilation is simply a process of running `go build` and waiting for the executable to be compiled. There are no external dependencies.
 
+## Releases
+
+Please check the "Releases" tab on GitHub for the latest release.
+
 ## Installation
 
 First you must configure ohsw.json. The file in this repository can serve as an example. If you are wrapping OHS, you simply have to change the paths. 
