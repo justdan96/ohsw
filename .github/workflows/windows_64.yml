@@ -11,7 +11,8 @@ jobs:
     outputs:
       status: ${{ steps.check.outputs.status }}
       upload_url: ${{ steps.create.outputs.upload_url }}
-        
+
+    steps:
     - name: create-release
       id: create
       uses: actions/create-release@v1
@@ -24,6 +25,9 @@ jobs:
         commitish: ${{ env.GITHUB_SHA }}
 
   build:
+    needs: check
+    if: needs.check.outputs.status == 0
+    
     runs-on: windows-latest
     
     steps:
