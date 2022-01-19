@@ -19,8 +19,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: nightly-${{ steps.check.outputs.version }}
-        release_name: Nightly build from ${{ steps.check.outputs.version }}
+        tag_name: nightly-${{ env.GITHUB_SHA }}
+        release_name: Nightly build ${{ env.GITHUB_SHA }}
         prerelease: true
         commitish: ${{ env.GITHUB_SHA }}
 
