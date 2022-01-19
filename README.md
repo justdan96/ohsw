@@ -45,7 +45,7 @@ git clone github.com/justdan96/ohsw
 cd ohsw
 go get github.com/kardianos/service
 go get github.com/mitchellh/go-ps
-go build
+go build ohsw.go
 ```
 
 This will produce `ohsw.exe` in the current folder.

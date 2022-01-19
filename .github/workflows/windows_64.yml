@@ -49,7 +49,7 @@ jobs:
       
     - name: build-for-windows
       run: |
-        go build
+        go build ohsw.go
         dir ohsw.exe
       env:
         GOOS: windows
