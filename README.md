@@ -43,8 +43,8 @@ Any recent version of Go should work. The project will only work on Windows. You
 ```
 git clone github.com/justdan96/ohsw
 cd ohsw
-go get github.com/kardianos/service
-go get github.com/mitchellh/go-ps
+go get github.com/kardianos/service@v1.2.1
+go get github.com/mitchellh/go-ps@v1.0.0
 go build ohsw.go
 ```
 

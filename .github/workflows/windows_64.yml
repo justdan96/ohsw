@@ -44,8 +44,8 @@ jobs:
       
     - name: setup-deps
       run: |
-        go get github.com/kardianos/service
-        go get github.com/mitchellh/go-ps
+        go get github.com/kardianos/service@v1.2.1
+        go get github.com/mitchellh/go-ps@v1.0.0
       
     - name: build-for-windows
       run: |
