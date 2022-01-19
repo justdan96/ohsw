@@ -19,10 +19,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: nightly-${{ env.GITHUB_SHA }}
-        release_name: Nightly build ${{ env.GITHUB_SHA }}
+        tag_name: nightly-${{ github.sha }}
+        release_name: Nightly build ${{ github.sha }}
         prerelease: true
-        commitish: ${{ env.GITHUB_SHA }}
+        commitish: ${{ github.sha }}
 
   build:
     needs: check
